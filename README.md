@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# coRider Chat App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native chat screen  for both Android and iOS, built with Expo.
 
-## Get started
+## Features
+- Chat UI with API integration
+- Infinite scroll for older messages
+- Floating action buttons (toggle with 🔗)
+- Responsive design for Android and iOS
 
-1. Install dependencies
+## Setup
 
-   ```bash
+1. **Install dependencies:**
+   ```sh
    npm install
    ```
-
-2. Start the app
-
-   ```bash
+2. **Start the app:**
+   ```sh
    npx expo start
    ```
+3. **Open in Expo Go:**
+   - Scan the QR code with Expo Go (Android/iOS) or run on a simulator.
 
-In the output, you'll find options to open the app in a
+## Project Structure
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- `components/` — All React Native components
+- `theme.js` — Theme and color definitions
+- `App.js` or `app/` — Main entry point
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## API
+- Fetches chat data from: `https://qa.corider.in/assignment/chat?page=0`
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Notes
+- Do **not** commit `node_modules/` or build outputs.
+- For any issues, please open an issue or contact the maintainer. 
