@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import theme from '../theme';
 
 const Header = ({ onMenu }) => (
   <View style={styles.container}>
     <TouchableOpacity>
-      <Text style={styles.backArrow}>{'<'}</Text>
+      <Text style={styles.backArrow}>{'←'}</Text>
     </TouchableOpacity>
     <View style={styles.info}>
       <Text style={styles.tripTitle}>Trip 1</Text>
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     borderBottomColor: theme.colors.border,
   },
   backArrow: {
-    fontSize: 24,
+    fontSize: 30,
+    // width:30,
     color: theme.colors.text,
     marginRight: 12,
   },

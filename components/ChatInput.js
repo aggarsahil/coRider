@@ -1,73 +1,71 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, StyleSheet, Text } from 'react-native';
-import theme from '../theme';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const ChatInput = ({ onToggleFloating }) => {
   const [text, setText] = useState('');
+  
   return (
     <View style={styles.container}>
-      {/* <TouchableOpacity style={styles.iconBtn}>
-        <Text style={styles.icon}>+</Text>
-      </TouchableOpacity> */}
-      <TextInput
-        style={styles.input}
-        placeholder="Reply to Rohit Yadav"
-        value={text}
-        onChangeText={setText}
-        placeholderTextColor="#888"
-      />
-      <TouchableOpacity style={styles.iconBtn} onPress={onToggleFloating}>
-        <Text style={styles.icon}>🔗</Text>
-      </TouchableOpacity>
-      {/* <TouchableOpacity style={styles.iconBtn}>
-        <Text style={styles.icon}>📷</Text> 
-      </TouchableOpacity>*/}
-      <TouchableOpacity >
-        <Text > ➤</Text>
-      </TouchableOpacity>
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Send Message"
+          value={text}
+          onChangeText={setText}
+          placeholderTextColor="#999999"
+          multiline
+        />
+        <TouchableOpacity style={styles.attachBtn} onPress={onToggleFloating}>
+          <Text style={styles.attachIcon}>📎</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sendBtn}>
+          <Text style={styles.sendIcon}>➤</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#E5E5EA',
+  },
+  inputContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: theme.colors.input,
-    padding: 8,
+    alignItems: 'flex-end',
+    backgroundColor: '#F2F2F7',
     borderRadius: 24,
-    margin: 12,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    elevation: 2,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    minHeight: 44,
   },
   input: {
     flex: 1,
-    backgroundColor: theme.colors.input,
-    borderRadius: 20,
-    paddingHorizontal: 12,
-    fontSize: 15,
-    color: theme.colors.text,
+    fontSize: 16,
+    color: '#000000',
+    maxHeight: 100,
+    paddingVertical: 8,
   },
-  iconBtn: {
+  attachBtn: {
     padding: 8,
+    marginLeft: 8,
   },
-  icon: {
+  attachIcon: {
     fontSize: 20,
-    color: theme.colors.icon,
+    color: '#007AFF',
   },
   sendBtn: {
-    backgroundColor: theme.colors.primary,
-    borderRadius: 20,
-    padding: 10,
+    padding: 8,
     marginLeft: 4,
   },
   sendIcon: {
-    color: '#fff',
-    fontSize: 18,
+    fontSize: 20,
+    color: '#007AFF',
   },
 });
 
-export default ChatInput; 
+export default ChatInput;

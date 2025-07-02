@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import theme from '../theme';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 const ChatBubble = ({ message }) => {
   const isSelf = message.sender.self;
@@ -30,8 +29,9 @@ const ChatBubble = ({ message }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginBottom: 12,
+    marginBottom: 8,
     alignItems: 'flex-end',
+    paddingHorizontal: 16,
   },
   self: {
     justifyContent: 'flex-end',
@@ -40,36 +40,35 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   bubble: {
-    maxWidth: '75%',
-    padding: 12,
-    borderRadius: 16,
+    maxWidth: '70%',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 20,
+    marginHorizontal: 8,
   },
   bubbleSelf: {
-    backgroundColor: theme.colors.bubbleSelf,
-    borderBottomRightRadius: 4,
-    marginLeft: 40,
+    backgroundColor: '#007AFF',
+    borderBottomRightRadius: 6,
   },
   bubbleOther: {
-    backgroundColor: theme.colors.bubbleOther,
-    borderBottomLeftRadius: 4,
-    marginRight: 8,
+    backgroundColor: '#E5E5EA',
+    borderBottomLeftRadius: 6,
   },
   text: {
-    fontSize: 15,
+    fontSize: 16,
     lineHeight: 20,
   },
   textSelf: {
-    color: theme.colors.bubbleTextSelf,
+    color: '#FFFFFF',
   },
   textOther: {
-    color: theme.colors.bubbleTextOther,
+    color: '#000000',
   },
   avatar: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    marginHorizontal: 8,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
   },
 });
 
-export default ChatBubble; 
+export default ChatBubble;

@@ -1,40 +1,61 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
-import theme from '../theme';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import add from '../add.png';
+import camera from '../camera.png';
+import videocamera from '../video-camera.png';
 
 const FloatingButtons = () => (
   <View style={styles.container}>
     <TouchableOpacity style={styles.btn}>
-      <Text style={styles.icon}>🎦</Text>
+      <Image source={camera} style={styles.icon} />
     </TouchableOpacity>
     <TouchableOpacity style={styles.btn}>
-      <Text style={styles.icon}>📷</Text>
+      <Image source={videocamera} style={styles.icon} />
     </TouchableOpacity>
     <TouchableOpacity style={styles.btn}>
-      <Text style={styles.icon}>📑</Text>
+      <Image source={add} style={styles.icon} />
     </TouchableOpacity>
+
   </View>
 );
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#009900',
+    borderRadius: 28,
     position: 'absolute',
-    right: 16,
-    bottom: 80,
-    flexDirection: 'column',
-    gap: 12,
+    right: 20,
+    bottom: 70,
+    flexDirection: 'row',
+    // height:10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   btn: {
-    backgroundColor: theme.colors.primary,
-    borderRadius: 24,
-    padding: 12,
-    marginBottom: 8,
-    elevation: 2,
+    // backgroundColor: '#009900',
+
+    width: 50,
+    height: 40,
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 5,
   },
   icon: {
-    color: '#fff',
-    fontSize: 20,
+    // fontSize: 24,
+    fontWeight: 'bold',
+    fontcolor: '#FFFFFF',
+    height: 20,
+    width: 20,
   },
 });
 
-export default FloatingButtons; 
+export default FloatingButtons;
