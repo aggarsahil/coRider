@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import alert from '../alert.png';
-import group from '../group.png';
-import phone from '../phone.png';
+import alert from '../assets/images/alert.png';
+import group from '../assets/images/member.png';
+import phone from '../assets/images/phone.png';
 
 const MenuModal = ({ visible, onClose }) => (
   <Modal
@@ -40,7 +40,9 @@ const styles = StyleSheet.create({
   menu: {
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
-    marginTop: 100,
+    // bottom: 0,
+    top:80,
+    // marginTop: 150,
     marginRight: 16,
     minWidth: 180,
     shadowColor: '#000',

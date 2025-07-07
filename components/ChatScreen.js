@@ -1,3 +1,4 @@
+import { ms } from '@/utils/Scale';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {
@@ -5,9 +6,8 @@ import {
   FlatList,
   Keyboard,
   Pressable,
-  StatusBar,
   StyleSheet,
-  View,
+  View
 } from 'react-native';
 import ChatBubble from './ChatBubble';
 import ChatInput from './ChatInput';
@@ -48,7 +48,7 @@ const ChatScreen = () => {
 
   return (
     <Pressable style={styles.container} onPress={dismissAll}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
+      {/* <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" /> */}
       <Header onMenu={() => setMenuVisible(true)} />
 
       <FlatList
@@ -82,14 +82,15 @@ const ChatScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FAF9F4',
   },
   messagesList: {
     paddingTop: 16,
     paddingBottom: 16,
+    backgroundColor:'FFFFFF'
   },
   loadingContainer: {
-    padding: 20,
+    padding: ms(5),
     alignItems: 'center',
   },
 });

@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   bubbleSelf: {
-    backgroundColor: '#007AFF',
-    borderBottomRightRadius: 6,
+    backgroundColor: '#1C63D5',
+    borderBottomRightRadius: 0,
   },
   bubbleOther: {
-    backgroundColor: '#E5E5EA',
-    borderBottomLeftRadius: 6,
+    backgroundColor: '#FFFFFF',
+    borderBottomLeftRadius: 0,
   },
   text: {
     fontSize: 16,
