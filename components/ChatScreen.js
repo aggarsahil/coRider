@@ -5,6 +5,8 @@ import {
   ActivityIndicator,
   FlatList,
   Keyboard,
+  KeyboardAvoidingView,
+  Platform,
   Pressable,
   StyleSheet,
   View
@@ -47,35 +49,40 @@ const ChatScreen = () => {
   };
 
   return (
-    <Pressable style={styles.container} onPress={dismissAll}>
-      {/* <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" /> */}
-      <Header onMenu={() => setMenuVisible(true)} />
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
+    >
+      <Pressable style={styles.container} onPress={dismissAll}>
+        <Header onMenu={() => setMenuVisible(true)} />
 
-      <FlatList
-        data={messages}
-        renderItem={({ item }) => <ChatBubble message={item} />}
-        keyExtractor={(item) => item.id.toString()}
-        inverted
-        onEndReached={handleLoadMore}
-        onEndReachedThreshold={0.2}
-        ListFooterComponent={
-          loading ? (
-            <View style={styles.loadingContainer}>
-              <ActivityIndicator size="small" color="#007AFF" />
-            </View>
-          ) : null
-        }
-        contentContainerStyle={styles.messagesList}
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-      />
+        <FlatList
+          data={messages}
+          renderItem={({ item }) => <ChatBubble message={item} />}
+          keyExtractor={(item) => item.id.toString()}
+          inverted
+          onEndReached={handleLoadMore}
+          onEndReachedThreshold={0.2}
+          ListFooterComponent={
+            loading ? (
+              <View style={styles.loadingContainer}>
+                <ActivityIndicator size="small" color="#007AFF" />
+              </View>
+            ) : null
+          }
+          contentContainerStyle={styles.messagesList}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+        />
 
-      <ChatInput onToggleFloating={() => setFloatingVisible((v) => !v)} />
+        <ChatInput onToggleFloating={() => setFloatingVisible((v) => !v)} />
 
-      {floatingVisible && <FloatingButtons />}
+        {floatingVisible && <FloatingButtons />}
 
-      <MenuModal visible={menuVisible} onClose={() => setMenuVisible(false)} />
-    </Pressable>
+        <MenuModal visible={menuVisible} onClose={() => setMenuVisible(false)} />
+      </Pressable>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -94,5 +101,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
 
 export default ChatScreen;

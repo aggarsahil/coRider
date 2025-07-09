@@ -35,8 +35,10 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderTopWidth: 1,
     borderTopColor: '#E5E5EA',
+    position:'relative',
   },
   inputContainer: {
+    // position: 'absolute',
     flexDirection: 'row',
     alignItems: 'flex-end',
     backgroundColor:  '#FFFFFF',
